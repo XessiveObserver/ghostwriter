@@ -8,12 +8,16 @@
 
     <div class="field">
       <%= f.label :username, class: "text-orange-500" %><br />
-      <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "rounded form-input w-80 text-orange-600 border-orange-300" %>
+      <%= f.text_field :username, autofocus: true, autocomplete: "username", 
+      class: "rounded form-input w-80 text-orange-600 border-orange-300
+        shadow-sm border-orange-300 focus:outline-none focus:border-orange-300 focus:ring-1 focus:ring-orange-500" %>
     </div>
 
     <div class="field">
       <%= f.label :email, class: "text-orange-500" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rounded form-input w-80 text-orange-600 border-orange-300" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+      class: "rounded form-input w-80 text-orange-600 border-orange-300
+        shadow-sm border-orange-300 focus:outline-none focus:border-orange-300 focus:ring-1 focus:ring-orange-500" %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -22,7 +26,9 @@
 
     <div class="field">
       <%= f.label :password, class: "text-orange-500" %> <i class="text-orange-700">(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "rounded form-input w-80 text-orange-600 border-orange-300" %>
+      <%= f.password_field :password, autocomplete: "new-password", 
+      class: "rounded form-input w-80 text-orange-600 border-orange-300
+        shadow-sm border-orange-300 focus:outline-none focus:border-orange-300 focus:ring-1 focus:ring-orange-500" %>
       <% if @minimum_password_length %>
         <br />
         <em class="text-orange-700"><%= @minimum_password_length %> characters minimum</em>
@@ -31,12 +37,16 @@
 
     <div class="field">
       <%= f.label :password_confirmation, class: "text-orange-500" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "rounded form-input w-80 text-orange-600 border-orange-300" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", 
+      class: "rounded form-input w-80 text-orange-600 border-orange-300
+        shadow-sm border-orange-300 focus:outline-none focus:border-orange-300 focus:ring-1 focus:ring-orange-500" %>
     </div>
 
     <div class="field">
       <%= f.label :current_password, class: "text-orange-500" %> <i class="text-orange-700">(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password", class: "rounded form-input w-80 text-orange-600 border-orange-300" %>
+      <%= f.password_field :current_password, autocomplete: "current-password", 
+      class: "rounded form-input w-80 text-orange-600 border-orange-300
+        shadow-sm border-orange-300 focus:outline-none focus:border-orange-300 focus:ring-1 focus:ring-orange-500" %>
     </div>
 
     <div class="actions my-3">
