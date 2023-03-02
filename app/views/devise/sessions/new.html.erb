@@ -1,16 +1,16 @@
-<div class="mx-auto bg-orange-50 p-5 rounded">
+<div class="flex mx-auto bg-orange-50 drop-shadow-2xl m-3 p-8 rounded">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <p>
       <h2 class="text-center text-xl text-orange-500 bg-orange-200 p-3 font-semibold mb-3 rounded">Log in</h2>  
     </p>
     <div class="field">
       <%= f.label :email, class: "text-orange-500" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rounded" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rounded form-input w-80 text-orange-600 border-orange-300" %>
     </div>
 
     <div class="field">
       <%= f.label :password, class: "text-orange-500" %><br />
-      <%= f.password_field :password, autocomplete: "current-password", class: "rounded" %>
+      <%= f.password_field :password, autocomplete: "current-password", class: "rounded form-input w-80 text-orange-600 border-orange-300" %>
     </div>
 
     <% if devise_mapping.rememberable? %>

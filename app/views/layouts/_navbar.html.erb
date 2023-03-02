@@ -1,19 +1,36 @@
-<div class="sm:flex sm:flex-row py-5 mx-auto space-x-14">
-      <div class="container text-orange-500 text-3xl font-bold">
-        <%= link_to "Ghost Writer", root_path, class: "ml-8 font-bold rounded hover:text-orange-50 hover:bg-orange-500 p-1" %>
+<div class="sm:flex sm:flex-row py-5 mx-auto space-x-14 bg-orange-50 drop-shadow-xl">
+      <div class="container text-2xl font-bold">
+        <%= link_to "Ghost Writer", root_path, 
+        class: "text-orange-500 bg-orange-200 p-1 ml-8
+          font-bold rounded hover:text-orange-50 hover:bg-orange-500 p-1" %>
       </div>
       <div class="container font-semibold text-orange-300">
-        <%= link_to "Home", root_path, class: "mx-3 text-orange-500 font-bold rounded hover:text-orange-50 hover:bg-orange-500 p-1" %>
+        <%= link_to "Home", root_path, 
+        class: "mx-3 text-orange-500 font-bold rounded
+          text-orange-500 bg-orange-200 p-1
+           hover:text-orange-50 hover:bg-orange-500 p-1" %>
       </div>
       
       <div class="container">
         <% if user_signed_in? %>
-        <%= link_to "Edit profile", edit_user_registration_path, class: "mx-3 text-orange-500 font-bold rounded hover:text-orange-50 hover:bg-orange-500 p-1" %>
+        <%= link_to "Edit profile", edit_user_registration_path, 
+        class: "mx-3 text-orange-500 font-bold rounded
+          text-orange-500 bg-orange-200 p-1
+           hover:text-orange-50 hover:bg-orange-500 p-1" %>
           <span> Signed in as <%= current_user.username %>. Not you? </span>
-          <%= link_to "Sign out", destroy_user_session_path, class: "mx-3 text-orange-500 font-bold rounded hover:text-orange-50 hover:bg-orange-500 p-1", data: { turbo_method: :delete } %>
+          <%= link_to "Sign out", destroy_user_session_path, 
+          class: "mx-3 text-orange-500 font-bold rounded
+            text-orange-500 bg-orange-200 p-1
+             hover:text-orange-50 hover:bg-orange-500 p-1", data: { turbo_method: :delete } %>
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path, class: "mx-3 text-orange-400 font-bold rounded hover:text-orange-50 hover:bg-orange-500 p-1", method: :get %>
-          <%= link_to "sign in", new_user_session_path, class: "mx-3 text-orange-500 font-bold rounded hover:text-orange-50 hover:bg-orange-500 p-1" %>
+          <%= link_to "Sign up", new_user_registration_path, 
+          class: "mx-3 text-orange-400 font-bold rounded
+            text-orange-500 bg-orange-200 p-1
+             hover:text-orange-50 hover:bg-orange-500 p-1", method: :get %>
+          <%= link_to "sign in", new_user_session_path, 
+          class: "mx-3 text-orange-50 font-bold rounded
+            text-orange-500 bg-orange-500 p-1
+             hover:text-orange-500 hover:bg-orange-50 p-1" %>
         <% end %>      
       </div>
       <div class="md:hidden">

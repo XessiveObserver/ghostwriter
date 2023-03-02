@@ -1,16 +1,22 @@
-<h2>Forgot your password?</h2>
+<div class="flex mx-auto bg-orange-50 drop-shadow-2xl m-2 p-8 rounded">
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+    <h2 class="text-center text-xl text-orange-500
+     bg-orange-200 p-3 font-semibold mb-3 rounded">Forgot your password?</h2>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= f.label :email, class: "text-orange-500" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rounded form-input w-96 text-orange-600 border-orange-300" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+    <div class="actions my-4">
+      <%= f.submit "Send me reset password instructions",
+      class: "text-white text-xl bg-orange-400 
+        p-2 w-96 rounded cursor-pointer font-bold
+        hover:text-orange-50 hover:bg-orange-500" %>
+    </div>
+    <%= render "devise/shared/links" %>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
