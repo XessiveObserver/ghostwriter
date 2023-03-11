@@ -1,0 +1,32 @@
+<div class="mx-auto ">
+  <%= form_with model: @account do |form| %>
+    <div>
+    <%= form.label :profile_pic %><br>
+      <%= form.file_field :profile_pic %>
+      <% @account.errors.full_messages_for(:profile_pic).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+    <%= form.label :biography %><br>
+      <%= form.rich_text_area :biography %>
+      <% @account.errors.full_messages_for(:biography).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+    <%= form.label :portfolio %><br>
+      <%= form.rich_text_area :portfolio %><br>
+      <% @account.errors.full_messages_for(:portfolio).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+      <%= link_to "Back To Profile", accounts_path, class: "" %>
+    </div>
+  <% end %>
+</div>

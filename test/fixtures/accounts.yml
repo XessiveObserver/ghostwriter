@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  biography: MyText
+  portfolio: MyText
+
+two:
+  biography: MyText
+  portfolio: MyText

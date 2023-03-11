@@ -1,0 +1,23 @@
+<div class="mx-auto col-sm-5 pt-3 p-3">
+<h1 class="text-center pb-3 shadow"><%= @account.name %></h1>
+
+<% if @account.profile_pic.attached? %>
+<p>
+<%= image_tag @account.profile_pic, class: "img-fluid img-thumbnail rounded mx-auto d-block" %>
+</p>
+<% end %>
+
+<p class="shadow-none bg-light rounded p-3"><%= @account.biography %></p>
+<p class="shadow-none bg-light rounded p-3"><%= @account.portfolio %></p>
+
+<div class="text-center">
+    <%= link_to "Back To Account List", accounts_path, class: "btn btn-secondary m-2" %>
+  <% if current_user %>
+    <%= link_to "Edit", edit_account_path(@account), class: "btn btn-success"  %>
+    <%= link_to "Destroy", account_path(@account), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    }, class: "btn btn-danger"  %>
+  <% end %>
+  </div>
+  </div>
