@@ -1,23 +1,44 @@
-<div class="mx-auto col-sm-5 pt-3 p-3">
-<h1 class="text-center pb-3 shadow"><%= @account.name %></h1>
+<div class="mx-auto">
+  <div class="flex my-3">      
+    <div class="flex-none">
+      <% if @account.profile_pic.attached? %>
+        <p>
+          <%= image_tag @account.profile_pic, class: "h-40 w-40 rounded-full" %>
+        </p>
+      <% end %>      
+    </div>
+    <div class="flex-auto m-14">
+      <h1 class="text-orange-500 text-center capitalize font-sans text-2xl font-bold">
+        <%= @account.user.username %>
+      </h1><hr/ >
+    </div>      
+  </div>
 
-<% if @account.profile_pic.attached? %>
-<p>
-<%= image_tag @account.profile_pic, class: "img-fluid img-thumbnail rounded mx-auto d-block" %>
-</p>
-<% end %>
+  <hr/ class="drop-shadow-xl">
 
-<p class="shadow-none bg-light rounded p-3"><%= @account.biography %></p>
-<p class="shadow-none bg-light rounded p-3"><%= @account.portfolio %></p>
+<div class="py-2 space-y-2 max-w-prose">
+  <div class="bg-orange-50 text-orange-500 p-3">
+    <h3 class="font-bold bg-orange-200 p-2 rounded py-3">Biography</h3>
+    <p class="py-3"><%= @account.biography %></p>
+  </div>
+  <div class="bg-orange-50 text-orange-500 p-3">
+    <h3 class="font-bold bg-orange-200 p-2 rounded py-3">Portfolio</h3>
+    <p class="py-3"><%= @account.portfolio %></p>
+  </div>
+  <div class="bg-orange-50 text-orange-500 p-3">
+    <h3 class="font-bold bg-orange-200 p-2 rounded py-3">Email</h3>
+    <p class="py-3"><%= @account.user.email %></p>
+  </div>
+</div>
 
-<div class="text-center">
-    <%= link_to "Back To Account List", accounts_path, class: "btn btn-secondary m-2" %>
+<div class="text-center space-x-3 my-5 border-red-600">
+    <%= link_to "Back To Account", accounts_path, class: "text-teal-600 bg-teal-100 p-2 font-bold rounded" %>
   <% if current_user %>
-    <%= link_to "Edit", edit_account_path(@account), class: "btn btn-success"  %>
-    <%= link_to "Destroy", account_path(@account), data: {
+    <%= link_to "Edit", edit_account_path(@account), class: "text-sky-600 bg-sky-100 p-2 font-bold rounded"  %>
+    <%= link_to "Delete", account_path(@account), data: {
                       turbo_method: :delete,
-                      turbo_confirm: "Are you sure?"
-                    }, class: "btn btn-danger"  %>
+                      turbo_confirm: "Are you sure?",
+                    }, class: "text-red-600 bg-red-100 p-2 font-bold rounded"  %>
   <% end %>
   </div>
-  </div>
+</div>

@@ -6,7 +6,7 @@
     <% @accounts.each do |account| %>
       <% if account.user == current_user || !current_user %>
         <p class="py-1 shadow-lg py-2 rounded text-center">
-          <%= link_to account.name, account, class: "fw-semibold text-dark" %>
+          <%= link_to account.user.username, account, class: "fw-semibold text-dark" %>
         </p>
       <% end %>
     <% end %>

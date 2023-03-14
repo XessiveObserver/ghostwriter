@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-    def index
+  def index
     @accounts = Account.all
   end
 
@@ -8,11 +8,12 @@ class AccountsController < ApplicationController
   end
 
   def new
-    @account = current_user.accounts.build
+    @account = Account.new
   end
   
   def create
-    @account = current_user.accounts.build(account_params)
+    @account = Account.new(account_params)
+    @account.user_id = current_user.id
 
     if @account.save
       redirect_to @account, notice: "Account was sucessfully created"
